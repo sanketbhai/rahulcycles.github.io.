@@ -505,10 +505,7 @@
                                         
                                          font-weight: bolder;
                                     ">National Level </p>
-                                    <p class="h2 text-center" style="
-                                    
-                                    /* font-style: italic; */
-                                ">
+                                    <p class="h2 text-center" >
                                         Traning Available
                                     </p>
                             </div>
@@ -804,13 +801,27 @@
     <script src="assets/js/script.js"></script>
     <script>
         function submitForm(){
-        var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-        xmlhttp.open("POST", "http://127.0.0.1:8000/");
-        xmlhttp.setRequestHeader("Content-Type", "application/json");
-        console.log(document.getElementById('name'))
-        xmlhttp.send(JSON.stringify({name:document.getElementById('name').value, email : document.getElementById('email').value, sub:document.getElementById('sub').value, mess :document.getElementById('mess').value }));
-        console.log(document.getElementByName('email'))
-        }
+        // var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
+        // xmlhttp.open("POST", "http://127.0.0.1:8000/");
+        // xmlhttp.setRequestHeader("Content-Type", "application/json");
+        // console.log(document.getElementById('name'))
+        // xmlhttp.send(JSON.stringify({name:document.getElementById('name').value, email : document.getElementById('email').value, sub:document.getElementById('sub').value, mess :document.getElementById('mess').value }));
+        // console.log(document.getElementByName('email'))
+        // }
+        fetch('http://127.0.0.1:8000/', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({name: 'example' }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                console.log('Success:', data);
+                })
+                .catch((error) => {
+                console.error('Error:', error);
+                });
     </script>
 </body>
 </html>
