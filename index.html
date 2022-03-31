@@ -698,7 +698,7 @@
                         </div>
 
                         <div class="col-sm-12">
-                            <button type="submit" onclick="return submitForm();" class="btn btn-inverted">Send Message</button>
+                            <button type="" onclick="submitForm();" class="btn btn-inverted">Send Message</button>
                         </div>  
                     </form>
                 </div>
@@ -807,8 +807,9 @@
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
         xmlhttp.open("POST", "http://127.0.0.1:8000/");
         xmlhttp.setRequestHeader("Content-Type", "application/json");
-        xmlhttp.send(JSON.stringify({name:document.getElementsById('name'), email : document.getElementsById('email'), sub:document.getElementsById('sub'), mess :document.getElementsById('mess') }));
-        console.log(document.getElementsByName('email'))
+        console.log(document.getElementById('name'))
+        xmlhttp.send(JSON.stringify({name:document.getElementById('name'), email : document.getElementById('email'), sub:document.getElementById('sub'), mess :document.getElementById('mess') }));
+        console.log(document.getElementByName('email'))
         }
     </script>
 </body>
