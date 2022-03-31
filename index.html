@@ -685,16 +685,16 @@
                 <div class="row">
                     <form >
                         <div class="col-md-4">
-                            <input class="form-control" type="text" placeholder="Name" name='name' required>
+                            <input class="form-control" type="text" placeholder="Name" id='name' required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" type="email" placeholder="Email" name="email" required>
+                            <input class="form-control" type="email" placeholder="Email" id="email" required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" type="text" placeholder="Subject" name="sub" required>
+                            <input class="form-control" type="text" placeholder="Subject" id="sub" required>
                         </div>
                         <div class="col-sm-12">
-                            <textarea class="form-control" placeholder="Your Message" name="mess"  required></textarea>
+                            <textarea class="form-control" placeholder="Your Message" id="mess"  required></textarea>
                         </div>
 
                         <div class="col-sm-12">
@@ -807,7 +807,7 @@
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
         xmlhttp.open("POST", "http://127.0.0.1:8000/");
         xmlhttp.setRequestHeader("Content-Type", "application/json");
-        xmlhttp.send(JSON.stringify({name:document.getElementsByName('name'), email : document.getElementsByName('email'), sub:document.getElementsByName('sub'), mess :document.getElementsByName('mess') }));
+        xmlhttp.send(JSON.stringify({name:document.getElementsById('name'), email : document.getElementsById('email'), sub:document.getElementsById('sub'), mess :document.getElementsById('mess') }));
         console.log(document.getElementsByName('email'))
         }
     </script>
