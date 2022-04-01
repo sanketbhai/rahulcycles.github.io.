@@ -570,68 +570,7 @@
             </div>
         </section>
         
-        <!-- nation level test -->
-<!-- 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="nat">
-                        <img src="assets/img/traning.jpg"  alt="" style="height: 240px; border-radius: 15px;">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="nat" style="text-align: center;">
-                        <p class="h1 text-center" style="
-                        margin: 68px;
-                         font-weight: bolder;
-                    ">National Level </p>
-                    <p class="h2 text-center" style="
-                    margin: 70px;
-                
-                    margin-top: -51px;
-                    /* font-style: italic; */
-                ">
-                        Traning Available
-                    </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="nat">
-                        <img src="assets/img/shite.jpg"  class="col-sm-6 col-xs-12" alt="" style="height: 240px; width:100%; margin-left: -17px; border-radius:15px;">
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="nat">
-                        <img src="assets/img/timer.jpg" class="col-sm-6 col-xs-12" alt="" style="width:100%; height: 240px; margin-left: -17px; border-radius:15px;">
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
-        <!-- nation level test -->
-        
-        
-        
-        
-        <!-- /.section-services -->
-        <!-- End Services section -->
-        <!-- Reviews section -->
-       <!-- /.section-reviews -->
-        <!-- End Reviews section -->
-
-        <!-- Team section -->
-       
-        <!-- End Team section -->
-
-        <!-- History section --> 
-       <!-- /.section-history -->
-        <!-- End History section --> 
-
-        <!-- Portfolio/Works section --> 
-        <!-- /.section-works -->
-        <!-- End Works section --> 
+ 
 
         <!-- Me section --> 
         <section class="section-background section-me background-overlay text-center">
@@ -718,24 +657,24 @@
                 <h2>CONTACT US</h2>
                 <p class="section-subtitle"><span>Here i am</span></p>
                 <div class="row">
-                    <!-- <form > -->
+                    <form id="myform" method="post" action="http://127.0.0.1:8000/">
                         <div class="col-md-4">
-                            <input class="form-control" type="text" placeholder="Name" id='name' required>
+                            <input class="form-control" type="text" placeholder="Name" id='name' name='name' required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" type="email" placeholder="Email" id="email" required>
+                            <input class="form-control" type="email" placeholder="Email" id="email" name="email" required>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-control" type="text" placeholder="Subject" id="sub" required>
+                            <input class="form-control" type="text" placeholder="Subject" id="sub"  name="sub" required>
                         </div>
                         <div class="col-sm-12">
-                            <textarea class="form-control" placeholder="Your Message" id="mess"  required></textarea>
+                            <textarea class="form-control" placeholder="Your Message" id="mess"  name="mess"  required></textarea>
                         </div>
 
                         <div class="col-sm-12">
-                            <button type="" onclick="submitForm();" class="btn btn-inverted">Send Message</button>
+                            <button type="submit" onclick="submitForm();" class="btn btn-inverted">Send Message</button>
                         </div>  
-                    <!-- </form> -->
+                    </form>
                 </div>
             </div>
         </section><!-- /.section-contact-->
@@ -806,15 +745,6 @@
     </footer><!-- /#footer -->
     <!-- End Footer --> 
 <!-- The Modal -->
-<div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
-    </div>
-  
-  </div>
 
 
     <!-- Bootstrap core JavaScript
@@ -846,55 +776,8 @@
 
     <!-- Custom JS -->
     <script src="assets/js/script.js"></script>
-    <script>
-         var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-
-var modal = document.getElementById("myModal");
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-if (event.target == modal) {
-    modal.style.display = "none";
-}
-}
-        function submitForm(){
-        // var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-        // xmlhttp.open("POST", "http://127.0.0.1:8000/");
-        // xmlhttp.setRequestHeader("Content-Type", "application/json");
-        // console.log(document.getElementById('name'))
-        // xmlhttp.send(JSON.stringify({name:document.getElementById('name').value, email : document.getElementById('email').value, sub:document.getElementById('sub').value, mess :document.getElementById('mess').value }));
-        // console.log(document.getElementByName('email'))
-        // }
-            // Get the modal
-            var modal = document.getElementById("myModal");
-
-           
-
-            // Get the <span> element that closes the modal
-           
-            modal.style.display = "block";
-        fetch('http://127.0.0.1:8000/', {
-                method: 'POST', // or 'PUT'
-                headers: {
-                'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({name: 'example' }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                console.log('Success:', data);
-                
-                })
-                .catch((error) => {
-                console.log('Error:', error);
-                });
-        }
-    </script>
+   <script>
+      
+   </script>
 </body>
 </html>
